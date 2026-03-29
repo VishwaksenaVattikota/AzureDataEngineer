@@ -1,0 +1,106 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Page 1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "localfiles"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Number",
+				"type": "String"
+			},
+			{
+				"name": "Priority",
+				"type": "String"
+			},
+			{
+				"name": "Created",
+				"type": "String"
+			},
+			{
+				"name": "Updated",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Configuration Class",
+				"type": "String"
+			},
+			{
+				"name": "Assignment group",
+				"type": "String"
+			},
+			{
+				"name": "Assigned to",
+				"type": "String"
+			},
+			{
+				"name": "CI Category",
+				"type": "String"
+			},
+			{
+				"name": "Closed",
+				"type": "String"
+			},
+			{
+				"name": "Created by",
+				"type": "String"
+			},
+			{
+				"name": "Global State",
+				"type": "String"
+			},
+			{
+				"name": "Reassignment count",
+				"type": "String"
+			},
+			{
+				"name": "Related incidents",
+				"type": "String"
+			},
+			{
+				"name": "Reopen count",
+				"type": "String"
+			},
+			{
+				"name": "Requested by",
+				"type": "String"
+			},
+			{
+				"name": "Requested for",
+				"type": "String"
+			},
+			{
+				"name": "Short Description",
+				"type": "String"
+			},
+			{
+				"name": "Tags",
+				"type": "String"
+			},
+			{
+				"name": "Task type",
+				"type": "String"
+			},
+			{
+				"name": "Urgency",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

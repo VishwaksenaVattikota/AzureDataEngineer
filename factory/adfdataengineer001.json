@@ -1,0 +1,9 @@
+{
+	"name": "adfdataengineer001",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "145417db-e4df-4241-a03d-747a12c1dcf0",
+		"tenantId": "4b4b3440-5e0f-46d9-b65d-da237072d02f"
+	}
+}
