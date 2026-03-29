@@ -197,7 +197,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@item()",
+									"value": "@activity('Get Metadata2').output.exists",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
