@@ -11,7 +11,22 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsdataengineer0411.dfs.core.windows.net"
 		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"value": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://dataengkeyvault0411.vault.azure.net/"
+		},
+		"File_moment_properties_typeProperties_baseUrl": {
 			"value": "https://dataengkeyvault0411.vault.azure.net/"
 		},
 		"ServiceNow1_properties_typeProperties_endpoint": {

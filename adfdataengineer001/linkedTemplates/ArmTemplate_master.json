@@ -15,7 +15,27 @@
 			"type": "string",
 			"defaultValue": "https://adlsdataengineer0411.dfs.core.windows.net"
 		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdataengineer0411.dfs.core.windows.net"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://dataengkeyvault0411.vault.azure.net/"
+		},
+		"File_moment_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://dataengkeyvault0411.vault.azure.net/"
 		},
@@ -60,6 +80,9 @@
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					},
+					"File_moment_properties_typeProperties_baseUrl": {
+						"value": "[parameters('File_moment_properties_typeProperties_baseUrl')]"
+					},
 					"ServiceNow1_properties_typeProperties_endpoint": {
 						"value": "[parameters('ServiceNow1_properties_typeProperties_endpoint')]"
 					},
@@ -68,6 +91,18 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage4_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage4_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_url')]"
 					}
 				}
 			},
