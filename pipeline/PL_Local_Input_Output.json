@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					}
 				}
@@ -45,6 +46,7 @@
 						"value": "@activity('Get Metadata1').output.structure",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -106,7 +108,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "Wait1",
+									"activity": "If Condition1",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -125,7 +127,7 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
+										"recursive": false,
 										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
@@ -166,22 +168,6 @@
 							]
 						},
 						{
-							"name": "Wait1",
-							"type": "Wait",
-							"dependsOn": [
-								{
-									"activity": "Copy data1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"waitTimeInSeconds": 60
-							}
-						},
-						{
 							"name": "Wait2",
 							"type": "Wait",
 							"dependsOn": [
@@ -195,6 +181,68 @@
 							"userProperties": [],
 							"typeProperties": {
 								"waitTimeInSeconds": 120
+							}
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Copy data1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@item()",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Fail1",
+										"type": "Fail",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"message": "File Doesnot Exist",
+											"errorCode": "404"
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Get Metadata2",
+										"type": "GetMetadata",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"dataset": {
+												"referenceName": "DelimitedText3",
+												"type": "DatasetReference"
+											},
+											"fieldList": [
+												"exists"
+											],
+											"storeSettings": {
+												"type": "AzureBlobFSReadSettings",
+												"enablePartitionDiscovery": false
+											},
+											"formatSettings": {
+												"type": "DelimitedTextReadSettings"
+											}
+										}
+									}
+								]
 							}
 						}
 					]
