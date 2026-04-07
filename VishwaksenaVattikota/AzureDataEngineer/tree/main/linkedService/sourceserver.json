@@ -1,0 +1,17 @@
+{
+	"name": "sourceserver",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "CMDBReportingReader",
+			"database": "Test",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "cmdbreportingadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDJDRDU4NkNFLUU5NUEtNEVEQi1COUE5LUE0Njc2QjZDQzI0QV9mMTk1OGMwNy0xODUwLTRmYTItOTVkMC1lNTg0OTc4NzEwZTUiDQp9"
+		}
+	}
+}
