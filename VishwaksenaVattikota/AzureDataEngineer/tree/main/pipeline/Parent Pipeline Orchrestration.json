@@ -18,7 +18,7 @@
 					"source": {
 						"type": "SqlServerSource",
 						"sqlReaderQuery": {
-							"value": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue FROM dbo.ADF_Watermark_Table;",
+							"value": "SELECT TableSchema, TableName, WatermarkColumn, LastLoadValue\nFROM dbo.ADF_Watermark_Table\nWHERE TableSchema IS NOT NULL\n  AND TableName IS NOT NULL\n  AND WatermarkColumn IS NOT NULL\n  AND LTRIM(RTRIM(TableSchema)) <> ''\n  AND LTRIM(RTRIM(TableName)) <> ''\n  AND LTRIM(RTRIM(WatermarkColumn)) <> '';",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -27,7 +27,8 @@
 					"dataset": {
 						"referenceName": "DS_SQLSERVER_TBLLKUP",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -47,6 +48,7 @@
 						"value": "@activity('LKUP_SQLTABLE_WATRMRK_DW').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Execute Pipeline1",
